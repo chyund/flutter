@@ -73,6 +73,9 @@ class BannerState extends State<BannerWidget> {
         itemCount: urls.length,
         pagination: new SwiperPagination(),
         control: new SwiperControl(),
+        loop: true,
+        autoplayDisableOnInteraction: true,
+        autoplay: true,
       );
     }
   }
