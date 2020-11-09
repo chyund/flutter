@@ -37,7 +37,7 @@ class RoundImage extends StatelessWidget {
             Positioned(
               child: ClipOval(
                 child: Image(
-                  image: AssetImage("images/avatar.jpeg"),
+                  image: AssetImage(imageSrc),
                   width: width,
                   fit: BoxFit.cover,
                 ),
@@ -135,4 +135,32 @@ class MySeparator extends StatelessWidget {
       },
     );
   }
+}
+
+class MyFloatButton extends StatelessWidget{
+  final double width;
+  final double height;
+  final Widget child;
+  final VoidCallback onPressed;
+  final Color color;
+
+  MyFloatButton({this.width=50, this.height=50, this.child, this.onPressed, this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(height/2),
+          gradient: LinearGradient(colors:[Color(0xff005EBC),Color(0xff003087)],begin: Alignment.topCenter, end: Alignment.bottomCenter)
+        ),
+        child: child,
+      ),
+    );
+  }
+
 }
